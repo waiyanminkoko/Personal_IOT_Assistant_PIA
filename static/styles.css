@@ -1,0 +1,67 @@
+/* Add custom CSS for Bootstrap */
+.card {
+    margin-bottom: 20px;
+  }
+.form-group {
+    margin-bottom: 20px;
+}
+.custom-range {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+  
+.custom-range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#logo {
+    margin: 10px 0px 0px 10px;
+}
+
+#thingspeak {
+    margin: 0px 10px 0px 50px;
+    font-weight: bold;
+}
+
+#thingspeak_button {
+    width: 524px;
+    margin-left: 10px;
+}
+
+#welcome {
+    margin-right: 10px;
+    font-family: 'Noto Emoji', sans-serif;
+}
+
+#first-row {
+    margin: 10px;
+}
+
+.btn {
+    margin: 2px;
+}
+.btn-test{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

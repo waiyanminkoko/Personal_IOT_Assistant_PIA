@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal AIOT Assistant
+{% endblock %}
+<!--Dark Mode: https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp-->
+{% block main %}
+<!-- Image and text -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <a class="navbar-brand" href="#">
+    <img src="/static/full-logo-small.png" width="120" height="100" class="d-inline-block align-top" alt="PIOT Logo" id = "logo">
+  </a>
+  
+  <form class="container-fluid justify-content-start" id = "thingspeak_button">
+    <button class="btn btn-outline-primary me-2" type="button">
+      <a class="nav-link active" aria-current="page" href="https://thingspeak.com/channels/1971834" target="_blank" rel="noopener noreferrer" id = "thingspeak"> 
+        <img src = "/static/ThingSpeak_logo_transparent.png" width="50" height="50" alt = "ThingSpeak Logo">
+        ThingSpeak
+      </a>
+    </button>
+  </form>
+
+  <h2 id = "welcome">Welcome back, Wai Yan!</h2>
+</nav>
+
+<div class="container-fluid" id = "first-row">
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>Switches</h4>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <div class="form-check form-switch">
+                  <label class="form-check-label">Custom Switch</label> <!--Toggle Switch-->
+                  <br>
+                  <div class="d-flex">
+                    <form action = "/">
+                      <button type = "submit" class = "btn btn-danger mr-2">OFF</button>
+                    </form>
+                    <form action = "/">
+                      <button type = "submit" class = "btn btn-success">ON</button>
+                    </form>  
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check form-switch">
+                  <label class="form-check-label">Music</label>
+                  <div class="d-flex">
+                    <form action = "#">
+                      <button type = "submit" class = "btn btn-danger">P</button>
+                    </form>
+                    <form action = "#">
+                      <button type = "submit" class = "btn btn-danger">STOP</button>
+                    </form>  
+                    <form action = "/PLAY_MUSIC">
+                      <button type = "submit" class = "btn btn-success">PLAY</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check form-switch">
+                  <label class="form-check-label">Light Switch</label> <!--Toggle Switch-->
+                    <div class="d-flex">
+                      <form action = "/LED_is_OFF">
+                        <button type = "submit" class = "btn btn-danger">OFF</button>
+                      </form>
+                      <form action = "/LED_is_ON">
+                        <button type = "submit" class = "btn btn-success">ON</button>
+                      </form>
+                  </div>               
+                </div>
+            </div>
+              <div class="form-group">
+                <div class="form-check form-switch">
+                  <label class="form-check-label">Curtain</label>
+                  <div class="d-flex">
+                    <form action = "/Curtain_CLOSE">
+                      <button type = "submit" class = "btn btn-danger">CLOSE</button>
+                    </form>
+                    <form action = "/Curtain_OPEN">
+                      <button type = "submit" class = "btn btn-success">OPEN</button>
+                    </form> 
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check form-switch">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Fan Switch</label>
+                  <div class="d-flex">
+                    <form action = "/Fan_OFF">
+                      <button type = "submit" class = "btn btn-danger">OFF</button>
+                    </form>
+                    <form action = "/Fan_ON">
+                      <button type = "submit" class = "btn btn-success">ON</button>
+                    </form> 
+                  </div>               
+                </div>
+                <div class="form-group">
+                    
+                  <div class="form-check form-switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Fan Speed</label>
+                    <div class="d-flex">
+                      <form action = "/Fan_LOW">
+                        <button type = "submit" class = "btn btn-success">LOW</button>
+                      </form>
+                      <form action = "/Fan_MEDIUM">
+                        <button type = "submit" class = "btn btn-warning">MEDIUM</button>
+                      </form> 
+                      <form action = "/Fan_HIGH">
+                        <button type = "submit" class = "btn btn-danger">HIGH</button>
+                      </form>  
+                    </div>
+                  </div>   
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>Test Switches</h4>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-check form-switch">
+                <div>
+                      <form action = "/Morning">
+                        <button type="submit" class="btn btn-test btn-primary">CUSTOM</button>
+                      </form>
+                      <form action = "/Morning">
+                        <button type="submit" class="btn btn-test btn-warning">MORNING</button>
+                      </form>
+                      <!--<form action = "/Bye">
+                        <button type="submit" class="btn btn-test btn-warning">BYE</button>
+                      </form>-->
+                      <form action = "/Night">
+                          <button type = "submit" class = "btn btn-test btn-secondary">NIGHT</button>
+                      </form>
+                      <form action = "/Sleep">
+                          <button type = "submit" class = "btn btn-test btn-dark">SLEEP</button>
+                      </form>
+                      <form action = "/Auto">
+                          <button type = "submit" class = "btn btn-test btn-primary">AUTO</button>
+                      </form>       
+                </div>
+              </div>
+
+                </form>
+              </div>
+            </div>
+  
+          </div>
+
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h4>Room Status</h4>
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Temperature</td>
+                    <td id="temp">{{ temperature }}°C</td>
+                  </tr>
+                  <tr>
+                    <td>Humidity</td>
+                    <td id="humidity">{{ humidity }}%</td>
+                  </tr>
+                  <tr>
+                    <td>Light Switch</td>
+                    <td id="light">
+                      {% if light_status %}
+                        ON
+                      {% else %}
+                        OFF
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Curtain</td>
+                    <td id="curtain">
+                      {% if servo_position%}
+                        OPEN (Position: {{ servo_position }})
+                      {% else %}
+                        CLOSE
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Fan</td>
+                    <td id="fan">
+                      {% if motor_speed %}
+                        ON
+                      {% else %}
+                        OFF
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status</td> <!--Status of the Test Switch-->
+                    <td id="stats">
+                      {% if current_route %}
+                        {{ current_route }}
+                      {% else %}
+                        NONE
+                      {% endif %}
+                      <!--{{ current_route }}-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}
+
